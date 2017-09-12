@@ -21,7 +21,7 @@ It's meant to be turnkey, but only as an experiment. If you really want, you can
 * Controllers should know where to go to process a request, not how to process the request. Always and forever.
 * Functionality should be separated by domain, not by category. Notice no Controllers or Models folders - Jobs and Employees (our example objects) are in their own folders.
 
-You will agree with some of my decisions. You will also disagree with some of my decisions. The main point of this is to provide my opinion so you can form your own!
+You will agree with some of my decisions. You will also disagree with some of my decisions. The main point of this is to provide my opinions so you can form your own!
 
 ## Libraries used
 
@@ -29,8 +29,12 @@ You will agree with some of my decisions. You will also disagree with some of my
 * **Autofac** - my favorite dependency injection library. Wires all of the project's dependencies together in a convenient, easy-to-understand way.
 * **AutoMapper** - everyone's favorite mapper library for .NET. Easily define mappings between classes. `ProjectTo` is our god.
 * **FluentValidation** - a deceptively simple way of validating requests coming into MediatR. Better than attribute validation.
-* **Entity Framework** - my favorite way to access data. You don't have to use it - anything that gives you an IQueryable is good enough.
+* **Entity Framework Core** - my favorite way to access data (except for EF6). You don't have to use it - anything that gives you an IQueryable is good enough. This is pretty nice cause you get an in-memory database for free.
 * **AutoMapper.Attributes** - a personal project of mine. Allows you to define mappings between classes using attributes.
+
+## Features
+- Paging when doing GETs
+- OrderBy for requests
 
 ## Getting started
 
@@ -42,13 +46,15 @@ You will agree with some of my decisions. You will also disagree with some of my
 
 ## Experimentation
 
-When you run the app, right now it won't look like it does much. I'd start by firing up Postman or curl or whatever you like, and start making requests to:
+When you run the app, it won't look like it does anything. I'd start by firing up Postman or curl or whatever you like, and start making requests to:
 
 `GET /api/Employees` 
 `POST /api/Employees` 
 `GET /api/Employees/1` 
 `GET /api/Jobs` 
 `POST /api/Jobs` 
+
+and see what happens.
 
 ## Brief tour
 
@@ -84,9 +90,9 @@ Jobs are pretty basic objects, but require an Employee object to be associated t
 
 ## TODOs
 
-* **Unit Tests**
-* Documentation
-* Comments in code so it's explictly clear how stuff is done
+* **Unit Tests** - for selling them so hard in my talk I certainly lack them here don't I?
+* Expanded documentation
+* Comments in code so it's explictly clear how/why stuff is done
 
 ## License
 
@@ -94,4 +100,4 @@ MIT.
 
 ## Thank you
 
-[Jimmy Bogard's](https://twitter.com/jbogard) blog and talks served as the biggest inspiration for this talk and this project. His libraries AutoMapper and MediatR stand at the core of this project.
+[Jimmy Bogard's](https://twitter.com/jbogard) blog and talks served as the biggest inspiration for this talk and this project. His libraries AutoMapper and MediatR stand at the core of this project. Basically I'm standing on the shoulders of giants.
