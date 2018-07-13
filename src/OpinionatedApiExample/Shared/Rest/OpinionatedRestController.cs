@@ -9,7 +9,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OpinionatedApiExample.Extensions;
-using OpinionatedApiExample.Shared.Rest.CommandsAndHandlers;
+using OpinionatedApiExample.Shared.Gets;
 
 namespace OpinionatedApiExample.Shared.Rest
 {

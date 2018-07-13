@@ -5,14 +5,14 @@ using AutoMapper;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using OpinionatedApiExample.Shared.Errors;
 using OpinionatedApiExample.Shared.Rest;
-using OpinionatedApiExample.Shared.Rest.CommandsAndHandlers;
 
 namespace OpinionatedApiExample.Shared
 {
     [Route("api/[controller]")]
     [Produces("application/json")]
-    public abstract class OpinionatedController : Controller, IUrlHelperContainer
+    public abstract class OpinionatedController : Controller, IUrlHelperProvider
     {
         public OpinionatedDbContext OpinionatedDbContext { get; }
         public IMapper Mapper { get; }

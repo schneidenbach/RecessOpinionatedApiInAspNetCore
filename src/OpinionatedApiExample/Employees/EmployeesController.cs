@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using OpinionatedApiExample.Employees;
-using OpinionatedApiExample.Employees.Models;
 using OpinionatedApiExample.Shared;
 using OpinionatedApiExample.Shared.Rest;
 
-namespace OpinionatedApiExample.Controllers
+namespace OpinionatedApiExample.Employees
 {
-    public class EmployeesController : OpinionatedRestController<Employee, EmployeeModel, EmployeeModel, EmployeePostModel>
+    public class EmployeesController : OpinionatedRestController<Employee, EmployeeModel, EmployeeModel, CreateEmployeeRequest>
     {
         public EmployeesController(OpinionatedDbContext opinionatedDbContext, IMapper mapper, IMediator mediator)
             : base(opinionatedDbContext, mapper, mediator)

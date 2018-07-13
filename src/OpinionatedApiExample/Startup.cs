@@ -15,9 +15,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Converters;
 using OpinionatedApiExample.Employees;
-using OpinionatedApiExample.Employees.Models;
 using OpinionatedApiExample.Shared;
-using OpinionatedApiExample.Shared.Rest.CommandsAndHandlers;
+using OpinionatedApiExample.Shared.Rest;
 
 namespace OpinionatedApiExample
 {
@@ -58,15 +57,10 @@ namespace OpinionatedApiExample
             builder.RegisterGeneric(typeof(RestPutHandler<,>)).AsImplementedInterfaces();
             builder.RegisterGeneric(typeof(RestPutRequest<,>));
 
-            builder.Register<SingleInstanceFactory>(ctx =>
+            builder.Register<ServiceFactory>(ctx =>
             {
                 var c = ctx.Resolve<IComponentContext>();
                 return t => c.Resolve(t);
-            });
-            builder.Register<MultiInstanceFactory>(ctx =>
-            {
-                var c = ctx.Resolve<IComponentContext>();
-                return t => (IEnumerable<object>)c.Resolve(typeof(IEnumerable<>).MakeGenericType(t));
             });
 
             var container = builder.Build();

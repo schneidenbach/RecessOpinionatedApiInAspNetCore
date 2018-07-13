@@ -1,4 +1,4 @@
-namespace OpinionatedApiExample.Shared.Rest
+namespace OpinionatedApiExample.Shared.Gets
 {
     public class GetRequest
     {

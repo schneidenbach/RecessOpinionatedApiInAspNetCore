@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace OpinionatedApiExample.Shared.Rest.CommandsAndHandlers
+namespace OpinionatedApiExample.Shared.Rest
 {
     public class RestPostRequest<TEntity, TPostModel, TGetModel> : IRequest<TGetModel>
         where TEntity : OpinionatedEntity

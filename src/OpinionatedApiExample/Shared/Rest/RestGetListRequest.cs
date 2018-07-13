@@ -1,6 +1,7 @@
 using MediatR;
+using OpinionatedApiExample.Shared.Gets;
 
-namespace OpinionatedApiExample.Shared.Rest.CommandsAndHandlers
+namespace OpinionatedApiExample.Shared.Rest
 {
     public class RestGetListRequest<TEntity, TGetModel> : IRequest<object>
         where TEntity : OpinionatedEntity

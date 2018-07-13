@@ -9,7 +9,7 @@ using OpinionatedApiExample.Shared;
 
 namespace OpinionatedApiExample.Shared
 {
-    public abstract class OpinionatedValidatedHandler<TRequest, TResponse> : ICancellableAsyncRequestHandler<TRequest, TResponse> 
+    public abstract class OpinionatedValidatedHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse> 
         where TRequest : IRequest<TResponse>
     {
         public OpinionatedDbContext OpinionatedDbContext { get; }

@@ -1,13 +1,13 @@
-using FluentValidation;
+﻿using FluentValidation;
 using OpinionatedApiExample.Employees;
 using OpinionatedApiExample.Shared;
-using OpinionatedApiExample.Shared.Rest.CommandsAndHandlers;
+using OpinionatedApiExample.Shared.Rest;
 
 namespace OpinionatedApiExample.Jobs
 {
-    public class JobPostValidator : OpinionatedValidator<RestPostRequest<Job, JobPostModel, JobModel>>
+    public class CreateJobRequestValidator : OpinionatedValidator<RestPostRequest<Job, CreateJobRequest, JobModel>>
     {
-        public JobPostValidator(OpinionatedDbContext opinionatedDbContext) 
+        public CreateJobRequestValidator(OpinionatedDbContext opinionatedDbContext) 
             : base(opinionatedDbContext)
         {
             RuleFor(e => e.NewEntity.Description).NotEmpty().WithMessage("Description is required.");

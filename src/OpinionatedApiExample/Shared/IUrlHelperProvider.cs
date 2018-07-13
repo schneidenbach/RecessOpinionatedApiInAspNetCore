@@ -1,8 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace OpinionatedApiExample.Shared
 {
-    public interface IUrlHelperContainer
+    public interface IUrlHelperProvider
     {
         IUrlHelper Url { get; }
     }

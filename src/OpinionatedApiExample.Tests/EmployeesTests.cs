@@ -1,18 +1,24 @@
+using System.Net.Http;
+using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace Tests
+namespace OpinionatedApiExample.Tests
 {
-    public class EmployeesTests
+    public class EmployeesTests : TestBase
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
-        public void Test1()
+        public async Task EmployeeCreatedSuccessfully()
         {
-            Assert.Pass();
+            var id = await CreateNewSpencyAsync();
+
+            Assert.That(id, Is.Not.Null);
+
+            var resp = await Client.GetAsync("api/Employees/" + id.ToString());
+            resp.EnsureSuccessStatusCode();
+            var createdEmployee = await resp.Content.ReadAsAsync<dynamic>();
+            
+            Assert.That(createdEmployee.firstName?.ToString(), Is.EqualTo("Spencer"));
+            Assert.That(createdEmployee.lastName?.ToString(), Is.EqualTo("Schneidenbach"));
         }
     }
 }

@@ -1,9 +1,7 @@
-using AutoMapper.Attributes;
-using OpinionatedApiExample.Shared.Rest;
+using OpinionatedApiExample.Shared.Gets;
 
-namespace OpinionatedApiExample.Employees.Models
+namespace OpinionatedApiExample.Employees
 {
-    [MapsFrom(typeof(Employee))]
     public class EmployeeModel : IGetModel
     {
         public int Id { get; set; }

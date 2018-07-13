@@ -1,6 +1,6 @@
 using System;
 
-namespace OpinionatedApiExample.Shared.Rest.CommandsAndHandlers
+namespace OpinionatedApiExample.Shared.Rest
 {
     public class EntityNotFoundException : Exception
     {

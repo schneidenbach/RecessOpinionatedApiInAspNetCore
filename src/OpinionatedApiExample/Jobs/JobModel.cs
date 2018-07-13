@@ -1,11 +1,10 @@
 using System;
-using AutoMapper.Attributes;
-using OpinionatedApiExample.Employees.Models;
+using OpinionatedApiExample.Employees;
+using OpinionatedApiExample.Shared.Gets;
 using OpinionatedApiExample.Shared.Rest;
 
 namespace OpinionatedApiExample.Jobs
 {
-    [MapsFrom(typeof(Job))]
     public class JobModel : IGetModel
     {
         public int Id { get; set; }

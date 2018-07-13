@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace OpinionatedApiExample.Shared.Rest
+namespace OpinionatedApiExample.Shared.Gets
 {
     public class PagedResults<T>
     {

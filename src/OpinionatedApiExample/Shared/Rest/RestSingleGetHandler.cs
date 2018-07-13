@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using FluentValidation;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OpinionatedApiExample.Extensions;
+using OpinionatedApiExample.Shared.Gets;
 
-namespace OpinionatedApiExample.Shared.Rest.CommandsAndHandlers
+namespace OpinionatedApiExample.Shared.Rest
 {
     public class RestSingleGetHandler<TEntity, TGetModel> : OpinionatedValidatedHandler<RestSingleGetRequest<TEntity, TGetModel>, TGetModel>
         where TEntity : OpinionatedEntity

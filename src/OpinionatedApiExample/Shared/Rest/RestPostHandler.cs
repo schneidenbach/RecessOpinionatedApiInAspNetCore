@@ -3,8 +3,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation;
+using OpinionatedApiExample.Shared.Gets;
 
-namespace OpinionatedApiExample.Shared.Rest.CommandsAndHandlers
+namespace OpinionatedApiExample.Shared.Rest
 {
     public class RestPostHandler<TEntity, TPostModel, TGetModel> : OpinionatedValidatedHandler<RestPostRequest<TEntity, TPostModel, TGetModel>, TGetModel>
         where TEntity : OpinionatedEntity

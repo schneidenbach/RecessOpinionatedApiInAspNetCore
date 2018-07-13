@@ -2,7 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 
-namespace OpinionatedApiExample.Shared.Rest.CommandsAndHandlers
+namespace OpinionatedApiExample.Shared.Rest
 {
     public class RestDeleteHandler<TEntity> : OpinionatedValidatedHandler<RestDeleteRequest<TEntity>, object>
         where TEntity : OpinionatedEntity
