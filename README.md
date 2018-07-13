@@ -48,11 +48,11 @@ You will agree with some of my decisions. You will also disagree with some of my
 
 When you run the app, it won't look like it does anything. I'd start by firing up Postman or curl or whatever you like, and start making requests to:
 
-`GET /api/Employees` 
-`POST /api/Employees` 
-`GET /api/Employees/1` 
-`GET /api/Jobs` 
-`POST /api/Jobs` 
+`GET /api/Employees`  
+`POST /api/Employees`  
+`GET /api/Employees/1`  
+`GET /api/Jobs`  
+`POST /api/Jobs`  
 
 and see what happens.
 
@@ -74,8 +74,8 @@ Employees are pretty basic objects, but represent something with a common busine
 
 * **Employee.cs** - the entity that is used by Entity Framework to store and retrieve Employee records. Has the `SocialSecurityNumber` property.
 * **EmployeeModel.cs** - the DTO we use in GET requests. Note its lack of the `SocialSecurityNumber` property - we don't want to be able to read this.
-* **EmployeePostModel.cs** - the DTO we use in POST (create) requests. Note that it DOES have the `SocialSecurityNumber` property for when the object is created.
-* **EmployeePostValidator.cs** - the class that validates the `EmployeePostModel`. Makes sure incoming Employees have at least a first and last name.
+* **CreateEmployeeModel.cs** - the DTO we use in POST (create) requests. Note that it DOES have the `SocialSecurityNumber` property for when the object is created.
+* **CreateEmployeeValidator.cs** - the class that validates the `EmployeePostModel`. Makes sure incoming Employees have at least a first and last name.
 * **EmployeesController.cs** - routes the requests to handlers. Most of the magic happens through the `OpinionatedRestController`.
 
 ### Jobs
@@ -84,13 +84,13 @@ Jobs are pretty basic objects, but require an Employee object to be associated t
 
 * **Job.cs** - the entity that is used by Entity Framework to store and retrieve Job records.
 * **JobModel.cs** - the DTO we use in GET requests.
-* **JobPostModel.cs** - the DTO we use in POST (create) requests. Note that it has an `ProjectManagerId` as a required parameter - this is where you pass in the ID of the Employee.
-* **JobPostValidator.cs** - the class that validates the `JobPostModel`. Note that it checks to make sure the Employee ID you're passing in via `ProjectManagerId` points to an existing Employee.
+* **CreateJobModel.cs** - the DTO we use in POST (create) requests. Note that it has an `ProjectManagerId` as a required parameter - this is where you pass in the ID of the Employee.
+* **CreateJobValidator.cs** - the class that validates the `JobPostModel`. Note that it checks to make sure the Employee ID you're passing in via `ProjectManagerId` points to an existing Employee.
 * **EmployeesController.cs** - routes the requests to handlers.
 
 ## TODOs
 
-* **Unit Tests** - for selling them so hard in my talk I certainly lack them here don't I?
+* More comprehensive tests
 * Expanded documentation
 * Comments in code so it's explictly clear how/why stuff is done
 
