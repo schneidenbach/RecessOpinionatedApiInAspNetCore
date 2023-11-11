@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is meant to serve as a working example for the talk, **An Opinionated, Maintainable REST Architecture for ASP.NET Core**. It's highly recommended that you either a) [watch the talk](http://rest.schneids.net) or b) start reading a ton of [Jimmy Bogard's](https://twitter.com/jbogard) blog posts. Go ahead, I'll wait.
+This project is meant to serve as a working example for the talk, **An Opinionated, Maintainable REST Architecture for ASP.NET Core**. It's highly recommended that you either a) [watch the talk](https://www.youtube.com/watch?v=CH9VEeV-zok) or b) start reading a ton of [Jimmy Bogard's](https://twitter.com/jbogard) blog posts. Go ahead, I'll wait.
 
 ## What is it?
 
